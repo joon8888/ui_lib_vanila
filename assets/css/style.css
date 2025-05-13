@@ -143,4 +143,5 @@ html, body {
   display: block;
   height: 100%;
   background: #beb5ff;
+  transition: width 0.3s cubic-bezier(0, 0, 0.58, 1);
 }/*# sourceMappingURL=style.css.map */
