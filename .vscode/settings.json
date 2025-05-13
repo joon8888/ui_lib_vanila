@@ -1,0 +1,11 @@
+{
+  "editor.tabSize": 2,
+  "liveSassCompile.settings.formats": [
+      {
+    "format": "expanded",
+    "extensionName": ".css",
+    "savePath": "~/../../css",
+    },
+  ],
+  "liveServer.settings.port": 5501
+}
