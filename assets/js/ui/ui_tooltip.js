@@ -1,7 +1,7 @@
 class Tooltip {
   constructor (el) {
     this.el = el ;
-    const defaultOptions = {direction: 'auto', a11y: false};
+    const defaultOptions = {direction: {x: 'auto', y: 'auto'}, a11y: false};
     this.options = Object.assign({}, defaultOptions, JSON.parse(el.dataset.tooltipOptions || '{}'));
     this.popup = this.el.querySelector('.tooltip__popup');
     this.isOpen = false;
@@ -56,6 +56,9 @@ class Tooltip {
       if (btnLeft <  sideRoom) {
         this.popup.classList.add('tooltip__popup--active--align-x-left');
         translateValue.x = 0; 
+      } else if (window.innerWidth - btnRight < sideRoom) {
+        this.popup.classList.add('tooltip__popup--active--align-x-right');
+        translateValue.x = 0; 
       }
 
       this.popup.style.transform = `translate(${translateValue.x}%, ${translateValue.y}%)`;
@@ -67,17 +70,22 @@ class Tooltip {
   open () {
     this.isOpen = true;
     this.popup.classList.add('tooltip__popup--active');
-    if (this.options.a11y) this.activateA11y();
+    if (this.options.a11y) {
+      this.activateA11y();
+      this.el.focus();
+    }
   }
 
   close () {
     this.popup.classList.remove('tooltip__popup--active');
     this.popup.classList.remove('tooltip__popup--active--align-x-left')
+    this.popup.classList.remove('tooltip__popup--active--align-x-right')
     this.popup.classList.remove('tooltip__popup--active--align-y-bottom');
     this.isOpen = false;
     if (this.options.a11y) {
       this.activateA11y();
-      this.el.focus();
+      const openBtn = this.el.querySelector('.tooltip__btn-open');
+      openBtn.focus();
     }
   }
 
