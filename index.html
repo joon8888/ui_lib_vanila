@@ -11,16 +11,22 @@
   <meta property="og:image" content="이미지 URL">
   <meta property="og:url" content="페이지 URL">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <title>문서 제목</title>
+  <title>Script Module Libs</title>
   <link rel="stylesheet" href="./assets/css/style.css">
   <script src="./assets/js/ui/ui_accordion.js"></script>
   <script src="./assets/js/ui/ui_tab.js"></script>
   <script src="./assets/js/ui/ui_progressbar.js"></script>
+  <script src="./assets/js/ui/ui_tooltip.js"></script>
 </head>
 <body>
   <div id="app">
-    <div class="scroll-progress" data-progressbar-options = '{"type": "bar", "isLabel": false}'></div>
     <h1>UI Component</h1>
+    <h2>Scroll Progress Bar</h2>
+    <pre><code>&lt;div class="scroll-progress" data-progressbar-options ='{"type": "bar","isLabel": false}'&gt;</code></pre>
+    <pre><code>&lt;div class="scroll-progress" data-progressbar-options ='{"type": "round","isLabel": true}'&gt;</code></pre>
+    <div class="scroll-progress"></div>
+    <div class="scroll-progress" data-progressbar-options = '{"type": "round", "isLabel": true}'></div>
+    
     <h2>Accordion</h2>
     <div class="accordion-wrap">
       <div class="accordion" data-accordion-options = '{"a11y": true, "multiOpen" : true}'>
@@ -67,7 +73,6 @@
         </div>
       </div>
     </div>
-
     <pre><code>&lt;div class="tab" data-tab-options ='{"type": "scroll", "scrollDuration": 1000, "offset": 100}'&gt;</code></pre>
     <div class="tab-wrap">
       <div class="tab" data-tab-options ='{"type": "scroll", "scrollDuration": 1000, "offset": 100}'>
@@ -89,7 +94,6 @@
         </div>
       </div>
     </div>
-
     <pre><code>&lt;div class="tab" data-tab-options ='{"type": "scroll-fix", "scrollDuration": 1000, "a11y": true}'&gt;</code></pre>
     <div class="tab-wrap">
       <div class="tab" data-tab-options ='{"type": "scroll-fix", "scrollDuration": 1000, "a11y": true}'>
@@ -108,6 +112,22 @@
           <div id="panel3-1" class="tab__content__panel tab__content__panel--active">탭 패널1</div>
           <div id="panel3-2" class="tab__content__panel">탭 패널2</div>
           <div id="panel3-3" class="tab__content__panel">탭 패널3</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Tooltip 팝업</h3>
+    <div class="tooltip-wrap">
+      <div class="tooltip" data-tooltip-options='{"direction": "auto", "a11y": true}'>
+        <button type="button" class="tooltip__btn-open">툴팁팝업열기</button>
+        <div class="tooltip__popup">
+          <div class="tooltip__popup__inner">
+            <div class="tooltip__popup__head">
+              <div class="tooltip__popup__head__tit">툴팁팝업 타이틀</div>
+              <button type="button" class="tooltip__popup__head__close">닫기</button>
+            </div>
+            <div class="tooltip__popup__content">툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용</div>
+          </div>
         </div>
       </div>
     </div>

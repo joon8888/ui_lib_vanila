@@ -17,7 +17,8 @@ time, mark, audio, video {
   font-size: 100%;
   font-family: inherit;
   vertical-align: baseline;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 article, aside, details, figcaption, figure,
@@ -104,6 +105,8 @@ html, body {
   top: 0;
 }
 #app .tab__nav__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   height: 100%;
@@ -132,16 +135,117 @@ html, body {
 }
 #app .scroll-progress {
   position: fixed;
+  z-index: 10000;
+  --progress-color: #beb5ff;
+}
+#app .scroll-progress .scroll-progress__bar {
+  display: block;
+  background: var(--progress-color);
+  -webkit-transition: width 0.3s cubic-bezier(0, 0, 0.58, 1), background 0.6s cubic-bezier(0, 0, 0.58, 1);
+  transition: width 0.3s cubic-bezier(0, 0, 0.58, 1), background 0.6s cubic-bezier(0, 0, 0.58, 1);
+}
+#app .scroll-progress .scroll-progress__label {
+  position: absolute;
+}
+#app .scroll-progress--type-bar {
   top: 0;
   left: 0;
-  z-index: 10000;
   width: 100%;
   height: 20px;
   background: rgba(255, 255, 255, 0.6);
 }
-#app .scroll-progress__bar {
-  display: block;
+#app .scroll-progress--type-bar .scroll-progress__bar {
   height: 100%;
-  background: #beb5ff;
-  transition: width 0.3s cubic-bezier(0, 0, 0.58, 1);
+}
+#app .scroll-progress--type-bar .scroll-progress__label {
+  left: 5px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+#app .scroll-progress--type-round {
+  bottom: 60px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+#app .scroll-progress--type-round .scroll-progress__bar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: conic-gradient(var(--progress-color) 100deg, transparent 0deg);
+}
+#app .scroll-progress--type-round .scroll-progress__bar::after {
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: inherit;
+  content: "";
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #fff;
+}
+#app .scroll-progress--type-round .scroll-progress__label {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+#app .tooltip {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#app .tooltip__popup {
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 200px;
+  background: #dfdfdf;
+}
+#app .tooltip__popup--active {
+  visibility: visible;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+}
+#app .tooltip__popup--active--align-x-left {
+  left: 0;
+}
+#app .tooltip__popup--active--align-x-right {
+  left: auto;
+  right: 0;
+}
+#app .tooltip__popup--active--align-y-top {
+  top: 0;
+}
+#app .tooltip__popup--active--align-y-bottom {
+  top: auto;
+}
+#app .tooltip__popup__inner {
+  padding: 5px;
+}
+#app .tooltip__popup__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#app .tooltip__popup__head__close {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+#app .tooltip__popup__head + .tooltip__popup__content {
+  padding-top: 5px;
 }/*# sourceMappingURL=style.css.map */

@@ -1,40 +1,59 @@
 class Progressbar {
-  constructor () {
-    this.el = document.querySelector('.scroll-progress');
-    const defaultOptions = {type: 'bar', isLabel: 'true'}
+  constructor (el) {
+    this.el = el;
+    const defaultOptions = {type: 'bar', isLabel: false}
     this.options = Object.assign({}, defaultOptions, JSON.parse(this.el.dataset.progressbarOptions || '{}'));
     this.bar = null;
     this.label = null;
-    this.scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     this.init();
   }
+  
   init () {
     this.createBar();
+    if(this.options.isLabel) this.createLabel();
     this.scrollEvent();
   }
+  
   createBar () {
     this.bar = document.createElement('span');
     this.el.appendChild(this.bar);
     this.bar.classList.add('scroll-progress__bar');
-    this.bar.style.width = Math.floor(window.scrollY / this.scrollHeight * 100);
+
+    if (this.options.type === 'bar') {
+      this.el.classList.add('scroll-progress--type-bar');
+      this.bar.style.width = Math.floor(this.getProgressPercent() * 100); 
+    } else if (this.options.type === 'round') {
+      this.el.classList.add('scroll-progress--type-round');
+      this.bar.style.background = `conic-gradient(var(--progress-color) ${Math.floor(this.getProgressPercent()  * 360)}deg, transparent 0deg)`;
+    }
   }
-  activateLabel () {
+  
+  createLabel () {
     this.label = document.createElement('span');
     this.el.appendChild(this.label)
     this.label.classList.add('scroll-progress__label');
-    this.label.textContent = Math.floor(window.scrollY / this.scrollHeight * 100);
+    this.label.textContent = Math.floor(this.getProgressPercent() * 100);
   }
-  scrollEvent () {
-    if(this.options.isLabel) this.activateLabel();
 
-    document.addEventListener('scroll', () => {
-      const progress = Math.floor(window.scrollY / this.scrollHeight * 100);
-      if(this.options.isLabel) this.label.textContent = progress;
-      this.bar.style.width = `${progress}%`;
-    })
+  getProgressPercent () {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    return window.scrollY / scrollHeight;
+  }
+
+  updateProgress () {
+    if(this.options.isLabel) this.label.textContent = Math.floor(this.getProgressPercent() * 100) ;
+    if (this.options.type === 'bar') {
+      this.bar.style.width = `${Math.floor(this.getProgressPercent() * 100)}%`;
+    } else if (this.options.type === 'round') {
+      this.bar.style.background = `conic-gradient(var(--progress-color) ${Math.floor(this.getProgressPercent()  * 360)}deg, transparent 0deg)`;
+    }
+  }
+
+  scrollEvent () {
+    document.addEventListener('scroll', () => this.updateProgress())
   }
 }
 
 addEventListener("DOMContentLoaded", () => {
-  new Progressbar();
+  document.querySelectorAll('.scroll-progress').forEach(el => new Progressbar(el));
 });
