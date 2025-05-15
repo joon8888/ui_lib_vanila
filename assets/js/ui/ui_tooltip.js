@@ -2,7 +2,9 @@ class Tooltip {
   constructor (el) {
     this.el = el ;
     const defaultOptions = {direction: {x: 'auto', y: 'auto'}, a11y: false};
-    this.options = Object.assign({}, defaultOptions, JSON.parse(el.dataset.tooltipOptions || '{}'));
+    const userOptions = JSON.parse(el.dataset.tooltipOptions || '{}');
+    this.options = Object.assign({}, defaultOptions, userOptions);
+    this.options.direction = Object.assign({}, defaultOptions.direction, userOptions.direction || {});
     this.popup = this.el.querySelector('.tooltip__popup');
     this.isOpen = false;
     this.init();
@@ -30,40 +32,59 @@ class Tooltip {
   }
 
   calculateDirection (btn) {
-    if(this.options.direction === 'auto') {
-      const {
-        width: btnWidth, 
-        height: btnHeight, 
-        top: btnTop, 
-        bottom: btnBottom, 
-        left: btnLeft, 
-        right: btnRight
-      } = this.getBtnPosition(btn);
-      
-      const {
-        clientWidth: popupWidth,
-        clientHeight: popupHeight
-      } = this.popup;
+    const {
+      top: btnTop, 
+      // bottom: btnBottom, 
+      left: btnLeft, 
+      right: btnRight
+    } = this.getBtnPosition(btn);
+    
+    const {
+      clientWidth: popupWidth,
+      clientHeight: popupHeight
+    } = this.popup;
 
-      let translateValue = {x: -50, y: -100};
+    const sideRoom = (popupWidth / 2) - (btn.clientWidth / 2); 
 
-      if (btnTop < popupHeight) {
-        this.popup.classList.add('tooltip__popup--active--align-y-bottom');
-        translateValue.y = 0; 
-      }
-
-      const sideRoom = (popupWidth / 2) - (btn.clientWidth / 2); 
-      if (btnLeft <  sideRoom) {
+    let translateValue = {x: -50, y: -100};
+    
+    // direction X 
+    if (this.options.direction.x === 'auto') {
+      if (btnLeft < sideRoom) {
         this.popup.classList.add('tooltip__popup--active--align-x-left');
         translateValue.x = 0; 
       } else if (window.innerWidth - btnRight < sideRoom) {
         this.popup.classList.add('tooltip__popup--active--align-x-right');
         translateValue.x = 0; 
+      } else {
+        translateValue.x = -50;
       }
-
-      this.popup.style.transform = `translate(${translateValue.x}%, ${translateValue.y}%)`;
+    } else if (this.options.direction.x === 'center') {
+      translateValue.x = -50;
+    } else if (this.options.direction.x === 'left') {
+      this.popup.classList.add('tooltip__popup--active--align-x-left');
+      translateValue.x = 0; 
+    } else if (this.options.direction.x === 'right') {
+      this.popup.classList.add('tooltip__popup--active--align-x-right');
+      translateValue.x = 0; 
     }
 
+    // direction Y 
+    if (this.options.direction.y === 'auto') {
+      if (btnTop < popupHeight) {
+        this.popup.classList.add('tooltip__popup--active--align-y-bottom');
+        translateValue.y = 0; 
+      } else {
+        translateValue.y = -100; 
+      }
+    } else if (this.options.direction.y === 'top') {
+      translateValue.y = -100; 
+    } else if (this.options.direction.y === 'bottom') {
+      this.popup.classList.add('tooltip__popup--active--align-y-bottom');
+      translateValue.y = 0; 
+    }
+    
+    this.popup.style.transform = `translate(${translateValue.x}%, ${translateValue.y}%)`;
     this.open();
   }
 
@@ -85,12 +106,12 @@ class Tooltip {
     if (this.options.a11y) {
       this.activateA11y();
       const openBtn = this.el.querySelector('.tooltip__btn-open');
-      openBtn.focus();
+      if (openBtn) openBtn.focus();
     }
   }
 
   bindEvent () {
-    document.addEventListener('click', e => {
+    this.el.addEventListener('click', e => {
       const openBtn = e.target.closest('.tooltip__btn-open');
       const closeBtn = e.target.closest('.tooltip__popup__head__close');
 
@@ -108,6 +129,12 @@ class Tooltip {
 
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && this.isOpen) {
+        this.close();
+      }
+    });
+
+    document.addEventListener('click', e => {
+      if (this.isOpen && !this.el.contains(e.target)) {
         this.close();
       }
     });
