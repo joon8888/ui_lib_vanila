@@ -256,6 +256,7 @@ html, body {
   left: 0;
   z-index: 10000;
   pointer-events: none;
+  mix-blend-mode: difference;
 }
 #cursor .cursor__item {
   position: fixed;
@@ -265,7 +266,6 @@ html, body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background: rgba(255, 0, 0, 0.6);
-  mix-blend-mode: difference;
   -webkit-transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
