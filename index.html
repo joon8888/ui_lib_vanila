@@ -13,6 +13,7 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <title>Script Module Libs</title>
   <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="./assets/js/ui/ui_mouse_effect.js"></script>
   <script src="./assets/js/ui/ui_accordion.js"></script>
   <script src="./assets/js/ui/ui_tab.js"></script>
   <script src="./assets/js/ui/ui_progressbar.js"></script>
@@ -61,9 +62,9 @@
         -->
         <div class="tab__nav">
           <div class="tab__nav__inner">
-            <button class="tab__nav__btn tab__nav__btn--active" data-tab-target="#panel1-1">탭 버튼1</button>
-            <button class="tab__nav__btn" data-tab-target="#panel1-2">탭 버튼2</button>
-            <button class="tab__nav__btn" data-tab-target="#panel1-3">탭 버튼3</button>
+            <button class="tab__nav__btn tab__nav__btn--active" data-tab-target="#panel1-1" data-cursor="click">탭 버튼1</button>
+            <button class="tab__nav__btn" data-tab-target="#panel1-2" data-cursor="click">탭 버튼2</button>
+            <button class="tab__nav__btn" data-tab-target="#panel1-3" data-cursor="click">탭 버튼3</button>
           </div>
         </div>
         <div class="tab__content">
@@ -154,6 +155,12 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <h3>Mouse Follow</h3>
+    <div class="mouse-follow" style="position:relative; display: flex; align-items: center; justify-content: center; height: 100vh;">
+      <div class="mouse-follow__item" style="background: #000; border-radius: 50%; width: 300px; height: 300px;"></div>
+       <div class="mouse-follow__item" data-mouse-follow-options='{"speed": 0.1}' style=" position: absolute; transform: translateZ(1000px); z-index: 1; left: -200px; top: 60%; background: #222; border-radius: 50%; width: 500px; height: 500px; filter: blur(30px);"></div>
     </div>
   </div>    
 </body>

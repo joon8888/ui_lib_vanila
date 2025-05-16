@@ -135,7 +135,7 @@ html, body {
 }
 #app .scroll-progress {
   position: fixed;
-  z-index: 10000;
+  z-index: 9999;
   --progress-color: #beb5ff;
 }
 #app .scroll-progress .scroll-progress__bar {
@@ -248,4 +248,50 @@ html, body {
 }
 #app .tooltip__popup__head + .tooltip__popup__content {
   padding-top: 5px;
+}
+
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  pointer-events: none;
+}
+#cursor .cursor__item {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: rgba(255, 0, 0, 0.6);
+  mix-blend-mode: difference;
+  -webkit-transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+#cursor .cursor__item__text::after {
+  display: block;
+}
+#cursor[data-cursor-status=zoom] .cursor__item {
+  -webkit-transform: translate(-50%, -50%) scale(2);
+          transform: translate(-50%, -50%) scale(2);
+}
+#cursor[data-cursor-status=click] .cursor__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 150px;
+  height: 150px;
+}
+#cursor[data-cursor-status=click] .cursor__item__text::after {
+  content: "CLICK";
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */
