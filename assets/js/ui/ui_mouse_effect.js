@@ -88,13 +88,22 @@ class MouseFollow {
         options: itemOptions
       };
     });
+    this.visible = false;
     this.init();
   }
 
   init () {
+    this.observeVisibility();
     this.items.forEach(item => {
       this.followEvent(item);
     })
+  }
+
+  observeVisibility () {
+    const observer = new IntersectionObserver(([entry]) => {
+      this.visible = entry.isIntersecting;
+    }, { threshold: 0 });
+    observer.observe(this.el);
   }
 
   followEvent (item) {
@@ -107,10 +116,12 @@ class MouseFollow {
     });
 
     const loop = () => {
-      oldX += (currentX - oldX) * item.options.speed;
-      oldY += (currentY - oldY) * item.options.speed;
-
-      item.el.style.transform = `translate(${parseInt(oldX * item.options.followRange)}px, ${parseInt(oldY * item.options.followRange)}px)`;
+      if (this.visible) {
+        oldX += (currentX - oldX) * item.options.speed;
+        oldY += (currentY - oldY) * item.options.speed;
+  
+        item.el.style.transform = `translate(${parseInt(oldX * item.options.followRange)}px, ${parseInt(oldY * item.options.followRange)}px)`;
+      }
       requestAnimationFrame(loop);
     };
     loop();
