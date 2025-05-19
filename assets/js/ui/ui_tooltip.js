@@ -1,4 +1,4 @@
-class Tooltip {
+export default class Tooltip {
   constructor (el) {
     this.el = el ;
     const defaultOptions = {direction: {x: 'auto', y: 'auto'}, a11y: false};
@@ -140,7 +140,3 @@ class Tooltip {
     });
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.tooltip').forEach(el => new Tooltip(el));
-})

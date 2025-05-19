@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Cursor Event | Script Module Libs</title>
+  <link rel="stylesheet" href="./../assets/css/style.css" />
+  <script type="module" src="./../assets/js/main.js"></script>
+  <script type="module" src="./../assets/js/ui/ui_mouse_effect.js"></script>
+</head>
+<body>
+  <h2>Mouse Cursor Event</h2>
+  <button type='button' data-cursor="click">data-cursor click 버튼</button>
+  <button>그냥 버튼</button>
+
+  <script type="module">
+    import { CursorEffect } from './../assets/js/ui/ui_mouse_effect.js';
+
+    document.addEventListener("DOMContentLoaded", function () {
+      new CursorEffect({ enableHoverEffect: true });
+    });
+  </script>
+</body>
+</html>

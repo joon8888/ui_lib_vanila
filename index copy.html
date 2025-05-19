@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="이 페이지에 대한 설명">
+  <meta name="keywords" content="웹, 개발, HTML">
+  <meta name="author" content="작성자 이름">
+  <meta property="og:title" content="페이지 제목">
+  <meta property="og:description" content="페이지 설명">
+  <meta property="og:image" content="이미지 URL">
+  <meta property="og:url" content="페이지 URL">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>Script Module Libs</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script type="module" src="./assets/js/main.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>UI Component</h1>
+    <h2>Scroll Progress Bar</h2>
+    <pre><code>&lt;div class="scroll-progress" data-progressbar-options ='{"type": "bar","isLabel": false}'&gt;</code></pre>
+    <pre><code>&lt;div class="scroll-progress" data-progressbar-options ='{"type": "round","isLabel": true}'&gt;</code></pre>
+    <div class="scroll-progress"></div>
+    <div class="scroll-progress" data-progressbar-options = '{"type": "round", "isLabel": true}'></div>
+    
+    <h2>Accordion</h2>
+    <div class="accordion-wrap">
+      <div class="accordion" data-accordion-options = '{"a11y": true, "multiOpen" : true}'>
+        <dl class="accordion__item">
+          <dt class="accordion__item__head">아코디언 제목</dt>
+          <dd class="accordion__item__content">아코디언 내용</dd>
+        </dl>
+        <dl class="accordion__item">
+          <dt class="accordion__item__head">아코디언 제목</dt>
+          <dd class="accordion__item__content">아코디언 내용</dd>
+        </dl>
+      </div>
+      <div class="accordion">
+        <dl class="accordion__item">
+          <dt class="accordion__item__head">아코디언 제목1</dt>
+          <dd class="accordion__item__content">아코디언 내용</dd>
+        </dl>
+        <dl class="accordion__item">
+          <dt class="accordion__item__head">아코디언 제목2</dt>
+          <dd class="accordion__item__content">아코디언 내용</dd>
+        </dl>
+      </div>
+    </div>
+
+    <h2>Tab</h2>
+    <pre><code>&lt;div class="tab" data-tab-options ='{"type": "basic","a11y": true}'&gt;</code></pre>
+    <div class="tab-wrap">
+      <div class="tab" data-tab-options ='{"type": "basic","a11y": true}'>
+        <!--
+          data-tab-options
+          type: basic(default) / scroll /scroll-fix 3가지 타입
+        -->
+        <div class="tab__nav">
+          <div class="tab__nav__inner">
+            <button class="tab__nav__btn tab__nav__btn--active" data-tab-target="#panel1-1" data-cursor="click">탭 버튼1</button>
+            <button class="tab__nav__btn" data-tab-target="#panel1-2" data-cursor="click">탭 버튼2</button>
+            <button class="tab__nav__btn" data-tab-target="#panel1-3" data-cursor="click">탭 버튼3</button>
+          </div>
+        </div>
+        <div class="tab__content">
+          <div id="panel1-1" class="tab__content__panel tab__content__panel--active">탭 패널1</div>
+          <div id="panel1-2" class="tab__content__panel">탭 패널2</div>
+          <div id="panel1-3" class="tab__content__panel">탭 패널3</div>
+        </div>
+      </div>
+    </div>
+    <pre><code>&lt;div class="tab" data-tab-options ='{"type": "scroll", "scrollDuration": 1000, "offset": 100}'&gt;</code></pre>
+    <div class="tab-wrap">
+      <div class="tab" data-tab-options ='{"type": "scroll", "scrollDuration": 1000, "offset": 100}'>
+        <!--
+          data-tab-options
+          type: basic(default) / scroll /scroll-fix 3가지 타입
+        -->
+        <div class="tab__nav">
+          <div class="tab__nav__inner">
+            <button class="tab__nav__btn tab__nav__btn--active" data-tab-target="#panel2-1">탭 버튼1</button>
+            <button class="tab__nav__btn" data-tab-target="#panel2-2">탭 버튼2</button>
+            <button class="tab__nav__btn" data-tab-target="#panel2-3">탭 버튼3</button>
+          </div>
+        </div>
+        <div class="tab__content">
+          <div id="panel2-1" class="tab__content__panel tab__content__panel--active">탭 패널1</div>
+          <div id="panel2-2" class="tab__content__panel">탭 패널2</div>
+          <div id="panel2-3" class="tab__content__panel">탭 패널3</div>
+        </div>
+      </div>
+    </div>
+    <pre><code>&lt;div class="tab" data-tab-options ='{"type": "scroll-fix", "scrollDuration": 1000, "a11y": true}'&gt;</code></pre>
+    <div class="tab-wrap">
+      <div class="tab" data-tab-options ='{"type": "scroll-fix", "scrollDuration": 1000, "a11y": true}'>
+        <!--
+          data-tab-options
+          type: basic(default) / scroll /scroll-fix 3가지 타입
+        -->
+        <div class="tab__nav">
+          <div class="tab__nav__inner">
+            <button class="tab__nav__btn tab__nav__btn--active" data-tab-target="#panel3-1">탭 버튼1</button>
+            <button class="tab__nav__btn" data-tab-target="#panel3-2">탭 버튼2</button>
+            <button class="tab__nav__btn" data-tab-target="#panel3-3">탭 버튼3</button>
+          </div>
+        </div>
+        <div class="tab__content">
+          <div id="panel3-1" class="tab__content__panel tab__content__panel--active">탭 패널1</div>
+          <div id="panel3-2" class="tab__content__panel">탭 패널2</div>
+          <div id="panel3-3" class="tab__content__panel">탭 패널3</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Mouse Follow</h3>
+    <div class="mouse-follow" style="position:relative; display: flex; align-items: center; justify-content: center; height: 100vh;">
+      <div class="mouse-follow__item" style="background: #000; border-radius: 50%; width: 300px; height: 300px;"></div>
+       <div class="mouse-follow__item" data-mouse-follow-options='{"speed": 0.1}' style=" position: absolute; transform: translateZ(1000px); z-index: 1; left: -200px; top: 60%; background: #222; border-radius: 50%; width: 500px; height: 500px; filter: blur(30px);"></div>
+    </div>
+  </div>    
+</body>
+</html>

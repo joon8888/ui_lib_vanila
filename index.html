@@ -1,167 +1,65 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="이 페이지에 대한 설명">
-  <meta name="keywords" content="웹, 개발, HTML">
-  <meta name="author" content="작성자 이름">
-  <meta property="og:title" content="페이지 제목">
-  <meta property="og:description" content="페이지 설명">
-  <meta property="og:image" content="이미지 URL">
-  <meta property="og:url" content="페이지 URL">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <title>Script Module Libs</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script src="./assets/js/ui/ui_mouse_effect.js"></script>
-  <script src="./assets/js/ui/ui_accordion.js"></script>
-  <script src="./assets/js/ui/ui_tab.js"></script>
-  <script src="./assets/js/ui/ui_progressbar.js"></script>
-  <script src="./assets/js/ui/ui_tooltip.js"></script>
-</head>
-<body>
-  <div id="app">
-    <h1>UI Component</h1>
-    <h2>Scroll Progress Bar</h2>
-    <pre><code>&lt;div class="scroll-progress" data-progressbar-options ='{"type": "bar","isLabel": false}'&gt;</code></pre>
-    <pre><code>&lt;div class="scroll-progress" data-progressbar-options ='{"type": "round","isLabel": true}'&gt;</code></pre>
-    <div class="scroll-progress"></div>
-    <div class="scroll-progress" data-progressbar-options = '{"type": "round", "isLabel": true}'></div>
-    
-    <h2>Accordion</h2>
-    <div class="accordion-wrap">
-      <div class="accordion" data-accordion-options = '{"a11y": true, "multiOpen" : true}'>
-        <dl class="accordion__item">
-          <dt class="accordion__item__head">아코디언 제목</dt>
-          <dd class="accordion__item__content">아코디언 내용</dd>
-        </dl>
-        <dl class="accordion__item">
-          <dt class="accordion__item__head">아코디언 제목</dt>
-          <dd class="accordion__item__content">아코디언 내용</dd>
-        </dl>
-      </div>
-      <div class="accordion">
-        <dl class="accordion__item">
-          <dt class="accordion__item__head">아코디언 제목1</dt>
-          <dd class="accordion__item__content">아코디언 내용</dd>
-        </dl>
-        <dl class="accordion__item">
-          <dt class="accordion__item__head">아코디언 제목2</dt>
-          <dd class="accordion__item__content">아코디언 내용</dd>
-        </dl>
-      </div>
-    </div>
-
-    <h2>Tab</h2>
-    <pre><code>&lt;div class="tab" data-tab-options ='{"type": "basic","a11y": true}'&gt;</code></pre>
-    <div class="tab-wrap">
-      <div class="tab" data-tab-options ='{"type": "basic","a11y": true}'>
-        <!--
-          data-tab-options
-          type: basic(default) / scroll /scroll-fix 3가지 타입
-        -->
-        <div class="tab__nav">
-          <div class="tab__nav__inner">
-            <button class="tab__nav__btn tab__nav__btn--active" data-tab-target="#panel1-1" data-cursor="click">탭 버튼1</button>
-            <button class="tab__nav__btn" data-tab-target="#panel1-2" data-cursor="click">탭 버튼2</button>
-            <button class="tab__nav__btn" data-tab-target="#panel1-3" data-cursor="click">탭 버튼3</button>
-          </div>
-        </div>
-        <div class="tab__content">
-          <div id="panel1-1" class="tab__content__panel tab__content__panel--active">탭 패널1</div>
-          <div id="panel1-2" class="tab__content__panel">탭 패널2</div>
-          <div id="panel1-3" class="tab__content__panel">탭 패널3</div>
-        </div>
-      </div>
-    </div>
-    <pre><code>&lt;div class="tab" data-tab-options ='{"type": "scroll", "scrollDuration": 1000, "offset": 100}'&gt;</code></pre>
-    <div class="tab-wrap">
-      <div class="tab" data-tab-options ='{"type": "scroll", "scrollDuration": 1000, "offset": 100}'>
-        <!--
-          data-tab-options
-          type: basic(default) / scroll /scroll-fix 3가지 타입
-        -->
-        <div class="tab__nav">
-          <div class="tab__nav__inner">
-            <button class="tab__nav__btn tab__nav__btn--active" data-tab-target="#panel2-1">탭 버튼1</button>
-            <button class="tab__nav__btn" data-tab-target="#panel2-2">탭 버튼2</button>
-            <button class="tab__nav__btn" data-tab-target="#panel2-3">탭 버튼3</button>
-          </div>
-        </div>
-        <div class="tab__content">
-          <div id="panel2-1" class="tab__content__panel tab__content__panel--active">탭 패널1</div>
-          <div id="panel2-2" class="tab__content__panel">탭 패널2</div>
-          <div id="panel2-3" class="tab__content__panel">탭 패널3</div>
-        </div>
-      </div>
-    </div>
-    <pre><code>&lt;div class="tab" data-tab-options ='{"type": "scroll-fix", "scrollDuration": 1000, "a11y": true}'&gt;</code></pre>
-    <div class="tab-wrap">
-      <div class="tab" data-tab-options ='{"type": "scroll-fix", "scrollDuration": 1000, "a11y": true}'>
-        <!--
-          data-tab-options
-          type: basic(default) / scroll /scroll-fix 3가지 타입
-        -->
-        <div class="tab__nav">
-          <div class="tab__nav__inner">
-            <button class="tab__nav__btn tab__nav__btn--active" data-tab-target="#panel3-1">탭 버튼1</button>
-            <button class="tab__nav__btn" data-tab-target="#panel3-2">탭 버튼2</button>
-            <button class="tab__nav__btn" data-tab-target="#panel3-3">탭 버튼3</button>
-          </div>
-        </div>
-        <div class="tab__content">
-          <div id="panel3-1" class="tab__content__panel tab__content__panel--active">탭 패널1</div>
-          <div id="panel3-2" class="tab__content__panel">탭 패널2</div>
-          <div id="panel3-3" class="tab__content__panel">탭 패널3</div>
-        </div>
-      </div>
-    </div>
-
-    <h3>Tooltip 팝업</h3>
-    <div class="tooltip-wrap" style="display: flex; justify-content: space-between;">
-      <div class="tooltip" data-tooltip-options='{"direction": {"x":"auto", "y":"auto"}, "a11y": true}'>
-        <button type="button" class="tooltip__btn-open">툴팁팝업열기</button>
-        <div class="tooltip__popup">
-          <div class="tooltip__popup__inner">
-            <div class="tooltip__popup__head">
-              <div class="tooltip__popup__head__tit">툴팁팝업 타이틀</div>
-              <button type="button" class="tooltip__popup__head__close">닫기</button>
-            </div>
-            <div class="tooltip__popup__content">툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용</div>
-          </div>
-        </div>
-      </div>
-      <div class="tooltip" data-tooltip-options='{"direction": {"x":"auto", "y":"auto"}, "a11y": true}'>
-        <button type="button" class="tooltip__btn-open">툴팁팝업열기</button>
-        <div class="tooltip__popup">
-          <div class="tooltip__popup__inner">
-            <div class="tooltip__popup__head">
-              <div class="tooltip__popup__head__tit">툴팁팝업 타이틀</div>
-              <button type="button" class="tooltip__popup__head__close">닫기</button>
-            </div>
-            <div class="tooltip__popup__content">툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용</div>
-          </div>
-        </div>
-      </div>
-      <div class="tooltip" data-tooltip-options='{"direction": {"x":"auto", "y":"auto"}, "a11y": true}'>
-        <button type="button" class="tooltip__btn-open">툴팁팝업열기</button>
-        <div class="tooltip__popup">
-          <div class="tooltip__popup__inner">
-            <div class="tooltip__popup__head">
-              <div class="tooltip__popup__head__tit">툴팁팝업 타이틀</div>
-              <button type="button" class="tooltip__popup__head__close">닫기</button>
-            </div>
-            <div class="tooltip__popup__content">툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="이 페이지에 대한 설명" />
+    <meta name="keywords" content="웹, 개발, HTML" />
+    <meta name="author" content="작성자 이름" />
+    <meta property="og:title" content="페이지 제목" />
+    <meta property="og:description" content="페이지 설명" />
+    <meta property="og:image" content="이미지 URL" />
+    <meta property="og:url" content="페이지 URL" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>Script Module Libs</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script type="module" src="./assets/js/main.js"></script>
+  </head>
+  <body>
+    <div id="app" class="app">
+      <header class="app__header">
+        <h1 class="app__header__title">Ui Script Module <span class="app__header__title__sub">ver.Vanila</span></h1>
+      </header>
+      <div class="app__body page-loader-wrap">
+        <div class="page-loader">
+          <aside class="page-loader__nav">
+            <nav class="nav">
+              <ul class="nav__menu">
+                <li>
+                  <a href="#home" class="nav__menu__btn nav__menu__btn--load">HOME</a>
+                </li>
+                <li>
+                  <a href="#accordion" class="nav__menu__btn nav__menu__btn--load">아코디언</a>
+                  <a href="./html/accordion.html" class="nav__menu__btn nav__menu__btn--link" target="_blank" title="새창 열기"><i class="icon icon--link"><span>페이지 이동</span></i></a>
+                </li>
+                <li>
+                  <a href="#tab"  class="nav__menu__btn nav__menu__btn--load">탭</a>
+                  <a href="./html/tab.html" class="nav__menu__btn nav__menu__btn--link" target="_blank" title="새창 열기"><i class="icon icon--link"><span>페이지 이동</span></i></a>
+                </li>
+                <li>
+                  <a href="#progressbar"  class="nav__menu__btn nav__menu__btn--load">스크롤 프로그레스바</a>
+                  <a href="./html/progressbar.html" class="nav__menu__btn nav__menu__btn--link" target="_blank" title="새창 열기"><i class="icon icon--link"><span>페이지 이동</span></i></a>
+                </li>
+                <li>
+                  <a href="#tooltip"  class="nav__menu__btn nav__menu__btn--load">Tooltip 팝업</a>
+                  <a href="./html/tooltip.html" class="nav__menu__btn nav__menu__btn--link" target="_blank" title="새창 열기"><i class="icon icon--link"><span>페이지 이동</span></i></a>
+                </li>
+                <li>
+                  <a href="#mousefollow"  class="nav__menu__btn nav__menu__btn--load">Mouse Event1</a>
+                  <a href="./html/mousefollow.html" class="nav__menu__btn nav__menu__btn--link" target="_blank" title="새창 열기"><i class="icon icon--link"><span>페이지 이동</span></i></a>
+                </li>
+                <li>
+                  <a href="#mousecursor"  class="nav__menu__btn nav__menu__btn--load">Mouse Event2</a>
+                  <a href="./html/mousecursor.html" class="nav__menu__btn nav__menu__btn--link" target="_blank" title="새창 열기"><i class="icon icon--link"><span>페이지 이동</span></i></a>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+          <div class="page-loader__container">
+            <iframe id="page-frame" src="/html/home.html" frameborder="0" width="100%" height="100%"></iframe>
           </div>
         </div>
       </div>
     </div>
-
-    <h3>Mouse Follow</h3>
-    <div class="mouse-follow" style="position:relative; display: flex; align-items: center; justify-content: center; height: 100vh;">
-      <div class="mouse-follow__item" style="background: #000; border-radius: 50%; width: 300px; height: 300px;"></div>
-       <div class="mouse-follow__item" data-mouse-follow-options='{"speed": 0.1}' style=" position: absolute; transform: translateZ(1000px); z-index: 1; left: -200px; top: 60%; background: #222; border-radius: 50%; width: 500px; height: 500px; filter: blur(30px);"></div>
-    </div>
-  </div>    
-</body>
+  </body>
 </html>

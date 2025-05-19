@@ -1,4 +1,4 @@
-class CursorEffect {
+export class CursorEffect {
   constructor (userOptions) {
     const defaultOptions = {enableSmoothing: false, smoothingSpeed: 0.1, hideDefaultCursor: false, enableHoverEffect: false};
     this.options = Object.assign({}, defaultOptions, userOptions || {});
@@ -77,7 +77,7 @@ class CursorEffect {
   }
 }
 
-class MouseFollow {
+export class MouseFollow {
   constructor (el) {
     this.el = el;
     this.items = Array.from(this.el.querySelectorAll('.mouse-follow__item')).map(item => {
@@ -126,13 +126,4 @@ class MouseFollow {
     };
     loop();
   }
-
-
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  new CursorEffect ({
-    enableHoverEffect: true
-  });
-  document.querySelectorAll('.mouse-follow').forEach(el => new MouseFollow(el));
-})

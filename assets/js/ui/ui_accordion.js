@@ -1,4 +1,4 @@
-class Accordion {
+export default class Accordion {
   constructor (el) {
     this.el = el;
     const defaultOptions = { a11y: false, multiOpen: false };
@@ -67,8 +67,3 @@ class Accordion {
     });
   }
 }
-
-addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('.accordion').forEach(el => new Accordion(el));
-});
-

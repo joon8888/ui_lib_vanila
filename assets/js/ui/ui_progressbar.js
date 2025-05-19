@@ -1,4 +1,4 @@
-class Progressbar {
+export default class Progressbar {
   constructor (el) {
     this.el = el;
     const defaultOptions = {type: 'bar', isLabel: false}
@@ -53,7 +53,3 @@ class Progressbar {
     document.addEventListener('scroll', () => this.updateProgress())
   }
 }
-
-addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('.scroll-progress').forEach(el => new Progressbar(el));
-});

@@ -1,4 +1,4 @@
-class Tab {
+export default class Tab {
   constructor(el) {
     this.el = el;
     const defaultOptions = {
@@ -181,7 +181,3 @@ class Tab {
     });
   }
 }
-
-addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('.tab').forEach(el => new Tab(el));
-});

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Follow | Script Module Libs</title>
+  <link rel="stylesheet" href="./../assets/css/style.css" />
+  <script type="module" src="./../assets/js/main.js"></script>
+</head>
+<body>
+  <h2>Mouse Follow</h2>
+  <div class="mouse-follow" style="position:relative; display: flex; align-items: center; justify-content: center; height: 100vh;">
+    <div class="mouse-follow__item" style="background: #000; border-radius: 50%; width: 300px; height: 300px;"></div>
+    <div class="mouse-follow__item" data-mouse-follow-options='{"speed": 0.1}' style=" position: absolute; transform: translateZ(1000px); z-index: 1; left: -200px; top: 60%; background: #222; border-radius: 50%; width: 500px; height: 500px; filter: blur(30px);"></div>
+  </div>
+</body>
+</html>

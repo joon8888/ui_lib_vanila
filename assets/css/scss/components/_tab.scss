@@ -1,0 +1,49 @@
+// 유틸리티(변수, 믹스인, 함수)
+@use '../utils' as *;
+
+// 탭
+.tab {
+  &__nav {
+    width: 100%;
+    height: 100px;
+    &--fixed {
+      position: fixed;
+      top: 0;
+    }
+
+    &__inner {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+    &__btn {
+      all: unset;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: #efefef;
+
+      &--active {
+        background: royalblue;
+      } 
+    }
+  }
+  &__content__panel {
+    height: 100vh;
+
+    &--active {
+      background: royalblue;
+    }
+  }
+
+  // type : basic
+  &:not(.tab--scroll) {
+    .tab__content__panel {
+      display: none;
+
+      &--active {
+        display: block;
+      }
+    }
+  }
+}

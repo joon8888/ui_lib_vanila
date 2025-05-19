@@ -1,0 +1,59 @@
+// 유틸리티(변수, 믹스인, 함수)
+@use '../utils' as *;
+
+// 툴팁 팔업
+.tooltip {
+  position: relative;
+  width: fit-content;
+  &__popup {
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    width: 200px;
+    background: #dfdfdf;
+
+    &--active {
+      visibility: visible;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -100%);
+
+      &--align-x-left {
+        left: 0;
+        // transform: translate(0, -100%);
+      }
+      &--align-x-right {
+        left: auto;
+        right: 0;
+        // transform: translate(0, -100%);
+      }
+      &--align-y-top {
+        top: 0;
+        // transform: translate(-50%, -100%);
+      }
+      &--align-y-bottom {
+        top: auto;
+        // transform: translate(-50%, 0);
+      }
+    }
+
+    &__inner {
+      padding: 5px; 
+    }
+
+    &__head {
+      display: flex; 
+      gap: 10px;
+      justify-content: space-between;
+
+      &__close {
+        flex-shrink: 0;
+      }
+
+      +.tooltip__popup__content {
+        padding-top: 5px;
+      }
+    }
+  }
+}
