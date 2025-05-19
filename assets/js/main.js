@@ -21,7 +21,7 @@ export default class Main {
 
   loadPage () {
     const hash = location.hash.replace('#', '') || 'home';
-    const url = `/html/${hash}.html`;
+    const url = `html/${hash}.html`;
     const frame = document.getElementById('page-frame');
     if (frame) frame.src = url;
 
