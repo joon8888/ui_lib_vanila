@@ -202,12 +202,21 @@ body {
   &__title {
     position: sticky;
     top: 0;
+    z-index: 100;
     background: #fff;
     display: flex;
     align-items: center;
     gap: 1rem;
     padding:3rem 0;
-    @include fontStyle ($size: 3rem, $fw: 900, $color: #222);
+    @include fontStyle ($size: 3rem, $fw: 900, $color: #222) {
+      @include mobile {
+        font-size: 2.4rem
+      }
+    };
+
+    @include mobile {
+      padding: 1.5rem 0;
+    }
 
     &--sub {
       @include fontStyle ($size: 2.4rem, $fw: 700, $color: #222);
@@ -258,9 +267,11 @@ body {
       background: $bg-gray-light;
       // border: 1px solid $bg-gray;
       padding: 2rem 3rem;
+      border-radius: 1.6rem;
 
       @include mobile {
         padding: 1.5rem 2rem;
+        border-radius: 0.8rem;
       }
     }
   }
@@ -268,11 +279,13 @@ body {
   pre {
     background: $bg-primary-dark;
     padding: 2rem 3rem;
+    border-radius: 1.6rem;
     color: $fc-white !important;
     
     @include mobile {
       padding: 1.5rem 2rem;
       font-size: 1.2rem;
+      border-radius: 0.8rem;
     }
 
     code {
@@ -330,6 +343,21 @@ body {
   }
 }
 
-.text-underline {
-  text-decoration: underline;
+.text {
+  &-underline {
+    text-decoration: underline;
+  }
+  
+  &-example {
+    font-size: 75%;
+    opacity: 0.7;
+
+    @include mobile {
+      font-size: 85%;
+    }
+
+    &--block {
+      display: block;
+    }
+  }
 }
