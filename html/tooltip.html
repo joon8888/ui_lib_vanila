@@ -8,41 +8,55 @@
   <script type="module" src="./../assets/js/main.js"></script>
 </head>
 <body>
-  <h2>Tooltip 팝업</h2>
-  <div class="tooltip-wrap" style="display: flex; justify-content: space-between;">
-    <div class="tooltip" data-tooltip-options='{"direction": {"x":"auto", "y":"auto"}, "a11y": true}'>
-      <button type="button" class="tooltip__btn-open">툴팁팝업열기</button>
-      <div class="tooltip__popup">
-        <div class="tooltip__popup__inner">
-          <div class="tooltip__popup__head">
-            <div class="tooltip__popup__head__tit">툴팁팝업 타이틀</div>
-            <button type="button" class="tooltip__popup__head__close">닫기</button>
-          </div>
-          <div class="tooltip__popup__content">툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용</div>
+  <div class="container">
+    <div class="container__inner">
+      <h2 class="container__title">Tooltip 팝업</h2>
+      <section class="container__Section">
+        <h3 class="container__title--sub">Info</h3>
+        <div class="container__content--box">
+          <ul class="container__content--list">
+            <li>버튼 클릭 시 팝업 생성</li>
+            <li>디폴트 팝업 위치 : 버튼 기준 상단의 중앙으로 오픈</li>
+            <li>특징 : viewport 상하좌우로부터의 버튼 거리를 getBoundingClientRect로 측정하여, 자동으로 위치 열림</li>
+          </ul>
         </div>
-      </div>
-    </div>
-    <div class="tooltip" data-tooltip-options='{"direction": {"x":"auto", "y":"auto"}, "a11y": true}'>
-      <button type="button" class="tooltip__btn-open">툴팁팝업열기</button>
-      <div class="tooltip__popup">
-        <div class="tooltip__popup__inner">
-          <div class="tooltip__popup__head">
-            <div class="tooltip__popup__head__tit">툴팁팝업 타이틀</div>
-            <button type="button" class="tooltip__popup__head__close">닫기</button>
+      </section>
+      <div class="tooltip-wrap" style="display: flex; justify-content: space-between;">
+        <div class="tooltip" data-tooltip-options='{"direction": {"x":"auto", "y":"auto"}, "a11y": true}'>
+          <button type="button" class="tooltip__btn-open">툴팁팝업열기</button>
+          <div class="tooltip__popup">
+            <div class="tooltip__popup__inner">
+              <div class="tooltip__popup__head">
+                <div class="tooltip__popup__head__tit">툴팁팝업 타이틀</div>
+                <button type="button" class="tooltip__popup__head__close">닫기</button>
+              </div>
+              <div class="tooltip__popup__content">툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용</div>
+            </div>
           </div>
-          <div class="tooltip__popup__content">툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용</div>
         </div>
-      </div>
-    </div>
-    <div class="tooltip" data-tooltip-options='{"direction": {"x":"auto", "y":"auto"}, "a11y": true}'>
-      <button type="button" class="tooltip__btn-open">툴팁팝업열기</button>
-      <div class="tooltip__popup">
-        <div class="tooltip__popup__inner">
-          <div class="tooltip__popup__head">
-            <div class="tooltip__popup__head__tit">툴팁팝업 타이틀</div>
-            <button type="button" class="tooltip__popup__head__close">닫기</button>
+        <div class="tooltip" data-tooltip-options='{"direction": {"x":"auto", "y":"auto"}, "a11y": true}'>
+          <button type="button" class="tooltip__btn-open">툴팁팝업열기</button>
+          <div class="tooltip__popup">
+            <div class="tooltip__popup__inner">
+              <div class="tooltip__popup__head">
+                <div class="tooltip__popup__head__tit">툴팁팝업 타이틀</div>
+                <button type="button" class="tooltip__popup__head__close">닫기</button>
+              </div>
+              <div class="tooltip__popup__content">툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용</div>
+            </div>
           </div>
-          <div class="tooltip__popup__content">툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용</div>
+        </div>
+        <div class="tooltip" data-tooltip-options='{"direction": {"x":"auto", "y":"auto"}, "a11y": true}'>
+          <button type="button" class="tooltip__btn-open">툴팁팝업열기</button>
+          <div class="tooltip__popup">
+            <div class="tooltip__popup__inner">
+              <div class="tooltip__popup__head">
+                <div class="tooltip__popup__head__tit">툴팁팝업 타이틀</div>
+                <button type="button" class="tooltip__popup__head__close">닫기</button>
+              </div>
+              <div class="tooltip__popup__content">툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

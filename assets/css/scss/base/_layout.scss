@@ -86,10 +86,13 @@ body {
   &__nav {
     min-width: 20rem;
     flex: 0 0 18%;
-    background: #eee;
+    background: $bg-white;
+    border-right: 1px solid $bg-gray-light;
 
     @include mobile {
       flex-basis: auto;
+      border-right: none;
+      border-bottom: 1px solid $bg-gray-light;
       overflow-x: scroll;
       overflow-y: hidden;
       // scrollbar-width: none;
@@ -123,18 +126,9 @@ body {
           display: flex;
           justify-content: center;
           height: 5rem;
-          border-bottom: 0.1rem solid #bcbcbc;
-
-          @include tablet {
-            + li {
-              border-left: 0.1rem solid #bcbcbc;
-            }
-          }
         }
 
         &__btn {
-          // transition: background-color 0.2s;
-          // will-change: background-color;
           @include fontStyle ($color: $fc-black);
 
           &--load {
@@ -150,18 +144,22 @@ body {
               scroll-snap-align: center;
             }
 
-          &.active, &:hover, &:focus-visible  {
+          &.active {
             background: $bg-primary;
             color: $fc-white;
+            font-weight: 600;
+          }
+          &:not(.active):hover, &:not(.active):focus-visible {
+            color: $fc-primary;
             font-weight: 600;
           }
 
           }
           &--link {
             flex-shrink: 0;
-            background: #dedede;
+            background: $bg-gray-light;
             &:hover, &:focus-visible {
-              background: #ccc;
+              background: $bg-gray;
             }
 
             @include mobile {
@@ -267,7 +265,7 @@ body {
       background: $bg-gray-light;
       // border: 1px solid $bg-gray;
       padding: 2rem 3rem;
-      border-radius: 1.6rem;
+      border-radius: 1.2rem;
 
       @include mobile {
         padding: 1.5rem 2rem;
@@ -279,7 +277,7 @@ body {
   pre {
     background: $bg-primary-dark;
     padding: 2rem 3rem;
-    border-radius: 1.6rem;
+    border-radius: 1.2rem;
     color: $fc-white !important;
     
     @include mobile {
