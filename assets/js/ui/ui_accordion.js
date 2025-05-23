@@ -29,6 +29,7 @@ export default class Accordion {
     const content = item.querySelector('.accordion__item__content');
 
     head.setAttribute('aria-expanded', isExpand.toString());
+    head.setAttribute('title', (!isExpand) ? '열기' : '닫기');
     content.setAttribute('aria-hidden', (!isExpand).toString());
   }
 

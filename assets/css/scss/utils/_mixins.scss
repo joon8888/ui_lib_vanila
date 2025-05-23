@@ -1,3 +1,6 @@
+@use './variables' as *;
+@use './functions' as *;
+
 @mixin flex ($ai: center, $jc: center) {
   display: flex;
   align-items: $ai;
@@ -16,5 +19,30 @@
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: $line;
+  }
+}
+
+// 미디워 쿼리 반응형
+@mixin mobile {
+  @media #{mq('mobile')} {
+    @content;
+  }
+}
+
+@mixin tablet($min-width: null) { 
+  @media #{mq('tablet', null, $min-width)} {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media #{mq('desktop')} {
+    @content;
+  }
+}
+
+@mixin custom-mq($width) {
+  @media #{mq(null, $width)} {
+    @content;
   }
 }

@@ -56,6 +56,10 @@ body {
   width: 100%;
   height: 100%;
 
+  @include mobile {
+    flex-direction: column;
+  }
+
   &-wrap {
     height: 100%;
     overflow: hidden;
@@ -66,12 +70,47 @@ body {
     flex: 0 0 18%;
     background: #eee;
 
+    @include mobile {
+      flex-basis: auto;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      // scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        height: 0.5rem;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #cdcdcd; 
+      }
+    }
+
     .nav {
+      @include mobile {
+        max-width: 100%;
+      }
       &__menu {
+        @include mobile {
+          display: flex;
+          flex-wrap: nowrap;
+        }
+
         li {
           display: flex;
           height: 5rem;
           border-bottom: 0.1rem solid #bcbcbc;
+
+          @include tablet {
+            + li {
+              border-left: 0.1rem solid #bcbcbc;
+            }
+          }
         }
 
         &__btn {
@@ -81,6 +120,12 @@ body {
             flex: 1 1 auto;
             padding: 1rem;
             @include ellipsis;
+
+            @include mobile {
+              min-width: 10rem;
+              text-align: center;
+              scroll-snap-align: center;
+            }
 
           &.active, &:hover, &:focus-visible  {
             background: royalblue;
@@ -94,6 +139,10 @@ body {
             background: #dedede;
             &:hover, &:focus-visible {
               background: #ccc;
+            }
+
+            @include mobile {
+              display: none;
             }
           }
         }

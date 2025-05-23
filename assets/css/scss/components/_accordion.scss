@@ -3,10 +3,21 @@
 
 // 아코디언
 .accordion {
-  &__head {
-    width: 100%;
-  }
-  &__content {
-    width: 100%;
+  &__item {
+    &__head {
+      width: 100%;
+      padding:2rem 3rem;
+    }
+    &__content {
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    &--active {
+      .accordion__item__content {
+        max-height: 1000px;
+      }
+    }
   }
 }

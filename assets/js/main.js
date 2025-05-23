@@ -28,7 +28,14 @@ export default class Main {
     const navBtns = document.querySelectorAll('.nav__menu__btn--load');
     navBtns.forEach(btn => {
       btn.classList.remove('active');
-      if(btn.getAttribute('href') === `#${hash}`) btn.classList.add('active');
+      if (btn.getAttribute('href') === `#${hash}`) {
+        btn.classList.add('active');
+        btn.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center"
+        });
+      }
     })
   }
 }

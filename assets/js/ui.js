@@ -13,7 +13,7 @@ export default class Ui {
     this.initTab();
     this.initTooltip();
   }
-
+  
   initAccordion () {
     document.querySelectorAll('.accordion').forEach(el => new Accordion(el));
   }
