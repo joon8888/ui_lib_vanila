@@ -20,6 +20,9 @@ time, mark, audio, video {
   }
   vertical-align: baseline;
   box-sizing: border-box;
+  word-break: keep-all;       
+  overflow-wrap: break-word; 
+  white-space: normal; 
 }
 
 html{

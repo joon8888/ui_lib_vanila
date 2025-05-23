@@ -25,6 +25,8 @@ export default class Main {
     const frame = document.getElementById('page-frame');
     if (frame) frame.src = url;
 
+    document.title = hash === 'home' ? 'Script Module Libs' : `${hash} | Script Module Libs`;
+
     const navBtns = document.querySelectorAll('.nav__menu__btn--load');
     navBtns.forEach(btn => {
       btn.classList.remove('active');

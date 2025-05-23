@@ -8,69 +8,91 @@
   <script type="module" src="./../assets/js/main.js"></script>
 </head>
 <body>
-  <h2>Tab</h2>
-    <pre><code>&lt;div class="tab" data-tab-options ='{"type": "basic","a11y": true}'&gt;</code></pre>
-    <div class="tab-wrap">
-      <div class="tab" data-tab-options ='{"type": "basic","a11y": true}'>
-        <!--
-          data-tab-options
-          type: basic(default) / scroll /scroll-fix 3가지 타입
-        -->
-        <div class="tab__nav">
-          <div class="tab__nav__inner">
-            <button class="tab__nav__btn tab__nav__btn--active" data-tab-target="#panel1-1" data-cursor="click">탭 버튼1</button>
-            <button class="tab__nav__btn" data-tab-target="#panel1-2" data-cursor="click">탭 버튼2</button>
-            <button class="tab__nav__btn" data-tab-target="#panel1-3" data-cursor="click">탭 버튼3</button>
+  <div class="container">
+    <div class="container__inner">
+      <h2 class="container__title">Tab</h2>
+      <section class="container__section">
+        <h3 class="container__title--sub">Info</h3>
+        <div class="container__content">
+          <p>pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp <a href="" class="container__btn container__btn--link">바로가기</a></p>
+          <ul class="container__content--list">
+            <li>blahblahblahblahblahblahblahblah</li>
+          </ul>
+        </div>
+        <div class="container__content--box">
+          이곳은 박스!!
+        </div>
+        <pre><code>&lt;div class=<span class="fc-lime text-underline">"tab"</span> data-tab-options ='{"type": "basic","a11y": true}'&gt;</code></pre>
+        <a href="" class="container__btn container__btn--link">바로가기</a>
+      </section>
+      <section>
+        <h3 class="container__title__sub">사용법</h3>
+      </section class="container__section">
+    
+      <pre><code>&lt;div class="tab" data-tab-options ='{"type": "basic","a11y": true}'&gt;</code></pre>
+      <div class="tab-wrap">
+        <div class="tab" data-tab-options ='{"type": "basic","a11y": true}'>
+          <!--
+            data-tab-options
+            type: basic(default) / scroll /scroll-fix 3가지 타입
+          -->
+          <div class="tab__nav">
+            <div class="tab__nav__inner">
+              <button class="tab__nav__btn tab__nav__btn--active" data-tab-target="#panel1-1" data-cursor="click">탭 버튼1</button>
+              <button class="tab__nav__btn" data-tab-target="#panel1-2" data-cursor="click">탭 버튼2</button>
+              <button class="tab__nav__btn" data-tab-target="#panel1-3" data-cursor="click">탭 버튼3</button>
+            </div>
+          </div>
+          <div class="tab__content">
+            <div id="panel1-1" class="tab__content__panel tab__content__panel--active">탭 패널1</div>
+            <div id="panel1-2" class="tab__content__panel">탭 패널2</div>
+            <div id="panel1-3" class="tab__content__panel">탭 패널3</div>
           </div>
         </div>
-        <div class="tab__content">
-          <div id="panel1-1" class="tab__content__panel tab__content__panel--active">탭 패널1</div>
-          <div id="panel1-2" class="tab__content__panel">탭 패널2</div>
-          <div id="panel1-3" class="tab__content__panel">탭 패널3</div>
+      </div>
+      <pre><code>&lt;div class="tab" data-tab-options ='{"type": "scroll", "scrollDuration": 1000, "offset": 100}'&gt;</code></pre>
+      <div class="tab-wrap">
+        <div class="tab" data-tab-options ='{"type": "scroll", "scrollDuration": 1000, "offset": 100}'>
+          <!--
+            data-tab-options
+            type: basic(default) / scroll /scroll-fix 3가지 타입
+          -->
+          <div class="tab__nav">
+            <div class="tab__nav__inner">
+              <button class="tab__nav__btn tab__nav__btn--active" data-tab-target="#panel2-1">탭 버튼1</button>
+              <button class="tab__nav__btn" data-tab-target="#panel2-2">탭 버튼2</button>
+              <button class="tab__nav__btn" data-tab-target="#panel2-3">탭 버튼3</button>
+            </div>
+          </div>
+          <div class="tab__content">
+            <div id="panel2-1" class="tab__content__panel tab__content__panel--active">탭 패널1</div>
+            <div id="panel2-2" class="tab__content__panel">탭 패널2</div>
+            <div id="panel2-3" class="tab__content__panel">탭 패널3</div>
+          </div>
+        </div>
+      </div>
+      <pre><code>&lt;div class="tab" data-tab-options ='{"type": "scroll-fix", "scrollDuration": 1000, "a11y": true}'&gt;</code></pre>
+      <div class="tab-wrap">
+        <div class="tab" data-tab-options ='{"type": "scroll-fix", "scrollDuration": 1000, "a11y": true}'>
+          <!--
+            data-tab-options
+            type: basic(default) / scroll /scroll-fix 3가지 타입
+          -->
+          <div class="tab__nav">
+            <div class="tab__nav__inner">
+              <button class="tab__nav__btn tab__nav__btn--active" data-tab-target="#panel3-1">탭 버튼1</button>
+              <button class="tab__nav__btn" data-tab-target="#panel3-2">탭 버튼2</button>
+              <button class="tab__nav__btn" data-tab-target="#panel3-3">탭 버튼3</button>
+            </div>
+          </div>
+          <div class="tab__content">
+            <div id="panel3-1" class="tab__content__panel tab__content__panel--active">탭 패널1</div>
+            <div id="panel3-2" class="tab__content__panel">탭 패널2</div>
+            <div id="panel3-3" class="tab__content__panel">탭 패널3</div>
+          </div>
         </div>
       </div>
     </div>
-    <pre><code>&lt;div class="tab" data-tab-options ='{"type": "scroll", "scrollDuration": 1000, "offset": 100}'&gt;</code></pre>
-    <div class="tab-wrap">
-      <div class="tab" data-tab-options ='{"type": "scroll", "scrollDuration": 1000, "offset": 100}'>
-        <!--
-          data-tab-options
-          type: basic(default) / scroll /scroll-fix 3가지 타입
-        -->
-        <div class="tab__nav">
-          <div class="tab__nav__inner">
-            <button class="tab__nav__btn tab__nav__btn--active" data-tab-target="#panel2-1">탭 버튼1</button>
-            <button class="tab__nav__btn" data-tab-target="#panel2-2">탭 버튼2</button>
-            <button class="tab__nav__btn" data-tab-target="#panel2-3">탭 버튼3</button>
-          </div>
-        </div>
-        <div class="tab__content">
-          <div id="panel2-1" class="tab__content__panel tab__content__panel--active">탭 패널1</div>
-          <div id="panel2-2" class="tab__content__panel">탭 패널2</div>
-          <div id="panel2-3" class="tab__content__panel">탭 패널3</div>
-        </div>
-      </div>
-    </div>
-    <pre><code>&lt;div class="tab" data-tab-options ='{"type": "scroll-fix", "scrollDuration": 1000, "a11y": true}'&gt;</code></pre>
-    <div class="tab-wrap">
-      <div class="tab" data-tab-options ='{"type": "scroll-fix", "scrollDuration": 1000, "a11y": true}'>
-        <!--
-          data-tab-options
-          type: basic(default) / scroll /scroll-fix 3가지 타입
-        -->
-        <div class="tab__nav">
-          <div class="tab__nav__inner">
-            <button class="tab__nav__btn tab__nav__btn--active" data-tab-target="#panel3-1">탭 버튼1</button>
-            <button class="tab__nav__btn" data-tab-target="#panel3-2">탭 버튼2</button>
-            <button class="tab__nav__btn" data-tab-target="#panel3-3">탭 버튼3</button>
-          </div>
-        </div>
-        <div class="tab__content">
-          <div id="panel3-1" class="tab__content__panel tab__content__panel--active">탭 패널1</div>
-          <div id="panel3-2" class="tab__content__panel">탭 패널2</div>
-          <div id="panel3-3" class="tab__content__panel">탭 패널3</div>
-        </div>
-      </div>
-    </div>
+  </div>
 </body>
 </html>

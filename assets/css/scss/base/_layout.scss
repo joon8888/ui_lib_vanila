@@ -1,11 +1,11 @@
 @use '../utils' as *;
 
 body {
-    font: {
-    size: 1.6rem;
-    weight: 400;
-    style: normal;
-  }
+  @include fontStyle ($size: 1.8rem) {
+    @include mobile {
+      font-size: 1.4rem;
+    }
+  };
 }
 .icon {
   display: inline-block;
@@ -41,11 +41,29 @@ body {
     justify-content: center;
     align-items: center;
     flex: 0 0 auto;
-    background: #000;
+    background: $bg-primary;
     padding: 1rem 2rem;
 
     &__title {
       color: #fff;
+    }
+  }
+}
+
+// 여백
+.mg {
+  &-t {
+    &-10 {
+      margin-top: 1rem;
+      @include mobile {
+        margin-top: 0.5rem;
+      }
+    }
+    &-20 {
+      margin-top: 2rem;
+      @include mobile {
+        margin-top: 1rem;
+      }
     }
   }
 }
@@ -103,6 +121,7 @@ body {
 
         li {
           display: flex;
+          justify-content: center;
           height: 5rem;
           border-bottom: 0.1rem solid #bcbcbc;
 
@@ -114,22 +133,26 @@ body {
         }
 
         &__btn {
-          transition: background-color 0.2s;
-          will-change: background-color;
+          // transition: background-color 0.2s;
+          // will-change: background-color;
+          @include fontStyle ($color: $fc-black);
+
           &--load {
+            display: inline-flex;
+            align-items: center;
             flex: 1 1 auto;
-            padding: 1rem;
+            padding: 0 1rem;
             @include ellipsis;
 
             @include mobile {
               min-width: 10rem;
-              text-align: center;
+              justify-content: center;
               scroll-snap-align: center;
             }
 
           &.active, &:hover, &:focus-visible  {
-            background: royalblue;
-            color: #fff;
+            background: $bg-primary;
+            color: $fc-white;
             font-weight: 600;
           }
 
@@ -152,4 +175,161 @@ body {
   &__container {
     flex: 1;
   }
+}
+
+// 개별 페이지 내부
+.container {
+  position: relative;
+  &__inner {
+    width: 100%;
+    max-width: 192rem;
+    margin: 0 auto;
+    padding: 0 4rem 10rem;
+
+    @include mobile {
+      padding: 0 2rem 16rem;
+    }
+  }
+
+  section + section {
+    margin-top: 6rem;
+
+    @include mobile {
+      margin-top: 4rem;
+    }
+  }
+
+  &__title {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding:3rem 0;
+    @include fontStyle ($size: 3rem, $fw: 900, $color: #222);
+
+    &--sub {
+      @include fontStyle ($size: 2.4rem, $fw: 700, $color: #222);
+    }
+
+    &::before {
+      display: block;
+      content: '';
+      width: 0.5rem;
+      height: 2.8rem;
+      background: $bg-primary;
+    }
+  }
+
+  &__content {
+    &--list {
+      padding-left: 2rem;
+
+      > li {
+        position: relative;
+        + li {
+          margin-top: .6rem;
+        }
+
+        &:before {
+          position: absolute;
+          left: -1.2rem;
+          top: 1.2rem;
+          display: block;
+          content: '';
+          background: $fc-gray-light;
+          width: 0.5rem;
+          height: 0.5rem;
+          border-radius: 50%;
+
+          @include mobile {
+            top: 1rem;
+          }
+        }
+      }
+    }
+
+    p {
+      line-height: 1.2;
+    }
+
+    &--box {
+      background: $bg-gray-light;
+      // border: 1px solid $bg-gray;
+      padding: 2rem 3rem;
+
+      @include mobile {
+        padding: 1.5rem 2rem;
+      }
+    }
+  }
+
+  pre {
+    background: $bg-primary-dark;
+    padding: 2rem 3rem;
+    color: $fc-white !important;
+    
+    @include mobile {
+      padding: 1.5rem 2rem;
+      font-size: 1.2rem;
+    }
+
+    code {
+      white-space: pre-wrap;
+    }
+  }
+
+  b {
+    font-weight: 600 !important;
+  }
+
+  .container__btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 3rem;
+
+    @include fontStyle ($size: 1.4rem) {
+      @include mobile {
+        font-size: 1.2rem;
+      }
+    }
+    &--link {
+      padding: 0 1.5rem;
+      border: 1px solid $bg-gray;
+      border-radius: 2rem;
+      color: $fc-black;
+
+      &:hover, &:focus-visible {
+        background: $bg-primary;
+        border-color: $bg-primary;
+        color: $fc-white;
+      }
+    } 
+  }
+}
+
+// font point
+.fc {
+  &-lime {
+    color: rgb(242, 255, 59) !important;
+    font-weight: 600;
+  }
+  &-black {
+    color: $fc-black !important;
+
+    &-real {
+      color: $fc-black-real !important;
+    }
+  }
+  &-primary {
+    color: $fc-primary !important;
+  }
+  &-red {
+    color: rgb(185, 36, 36) !important;
+  }
+}
+
+.text-underline {
+  text-decoration: underline;
 }

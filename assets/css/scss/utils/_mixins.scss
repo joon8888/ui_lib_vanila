@@ -1,6 +1,7 @@
 @use './variables' as *;
 @use './functions' as *;
 
+// 레이아웃
 @mixin flex ($ai: center, $jc: center) {
   display: flex;
   align-items: $ai;
@@ -8,6 +9,19 @@
   @content;
 }
 
+// 폰트설정
+@mixin fontStyle ($color: #424342, $size: 1.6rem, $fw: 400, $style: normal, $lh: 1.6) {
+  color: $color;
+  font: {
+    size: $size;
+    weight: $fw;
+    style: $style;
+  }
+  line-height: $lh;
+  @content;
+}
+
+// 말줄임
 @mixin ellipsis($line: 1) {
   @if ($line == 1) {
     overflow: hidden;
