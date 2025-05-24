@@ -3,6 +3,7 @@
 
 // 툴팁 팔업
 .tooltip {
+  display: inline-block;
   position: relative;
   width: fit-content;
   &__popup {
@@ -10,8 +11,9 @@
     position: absolute;
     left: -9999px;
     top: -9999px;
+    z-index: 100;
     width: 200px;
-    background: #dfdfdf;
+    // background: rgba(255,0,0,0.6);
 
     &--active {
       visibility: visible;

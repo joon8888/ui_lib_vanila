@@ -8,28 +8,47 @@
   <script type="module" src="./../assets/js/main.js"></script>
 </head>
 <body>
-  <h2>Accordion</h2>
-    <div class="accordion-wrap">
-      <div class="accordion" data-accordion-options = '{"a11y": true, "multiOpen" : true}'>
-        <dl class="accordion__item">
-          <dt class="accordion__item__head">아코디언 제목</dt>
-          <dd class="accordion__item__content">아코디언 내용</dd>
-        </dl>
-        <dl class="accordion__item">
-          <dt class="accordion__item__head">아코디언 제목</dt>
-          <dd class="accordion__item__content">아코디언 내용</dd>
-        </dl>
-      </div>
-      <div class="accordion">
-        <dl class="accordion__item">
-          <dt class="accordion__item__head">아코디언 제목1</dt>
-          <dd class="accordion__item__content">아코디언 내용</dd>
-        </dl>
-        <dl class="accordion__item">
-          <dt class="accordion__item__head">아코디언 제목2</dt>
-          <dd class="accordion__item__content">아코디언 내용</dd>
-        </dl>
-      </div>
+  <div class="container">
+    <div class="container__inner">
+      <h2 class="container__title">Accordion</h2>
+      <section class="container__section accordion-wrap accordion-wrap--custom">
+        <h3 class="container__title--sub">Demo</h3>
+        <h4 class="container__title--sub-small">Default Type</h4>
+        <div class="accordion">
+          <dl class="accordion__item">
+            <dt class="accordion__item__head">What is Lorem Ipsum?</dt>
+            <dd class="accordion__item__content">
+              <div class="accordion__item__content__inner">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              </div>
+            </dd>
+          </dl>
+          <dl class="accordion__item">
+            <dt class="accordion__item__head">Why do we use it?</dt>
+            <dd class="accordion__item__content">
+              <div class="accordion__item__content__inner">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</div>
+            </dd>
+          </dl>
+        </div>
+        <h4 class="container__title--sub-small">A11Y 적용 / 다중 열림 허용 Type</h4>
+        <div class="accordion" data-accordion-options = '{"a11y": true, "multiOpen" : true}'>
+          <dl class="accordion__item">
+            <dt class="accordion__item__head">What is Lorem Ipsum?</dt>
+            <dd class="accordion__item__content">
+              <div class="accordion__item__content__inner">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              </div>
+            </dd>
+          </dl>
+          <dl class="accordion__item">
+            <dt class="accordion__item__head">Why do we use it?</dt>
+            <dd class="accordion__item__content">
+              <div class="accordion__item__content__inner">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</div>
+            </dd>
+          </dl>
+        </div>
+      </section>
     </div>
+  </div>
 </body>
 </html>

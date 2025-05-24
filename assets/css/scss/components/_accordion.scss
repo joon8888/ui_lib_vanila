@@ -4,20 +4,23 @@
 // 아코디언
 .accordion {
   &__item {
+    width: 100%;
     &__head {
       width: 100%;
-      padding:2rem 3rem;
     }
     &__content {
       width: 100%;
       max-height: 0;
       overflow: hidden;
+      padding: 0rem; 
+      will-change: max-height;
+      transition: max-height 0.3s $ease;
     }
 
-    &--active {
-      .accordion__item__content {
-        max-height: 1000px;
-      }
-    }
+    // &--active {
+    //   .accordion__item__content {
+    //     
+    //   }
+    // }
   }
 }

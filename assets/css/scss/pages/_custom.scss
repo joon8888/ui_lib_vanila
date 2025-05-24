@@ -1,0 +1,145 @@
+// 유틸리티(변수, 믹스인, 함수)
+@use '../utils' as *;
+
+.accordion-wrap--custom {
+  .accordion {
+    &__item {
+      padding-bottom: 1rem;
+      border: 2px solid $bg-gray-light;
+      border-radius: 10px;
+      will-change: border-color;
+      transition:  border-color 0.25s;
+
+      + .accordion__item {
+        margin-top: 1rem;
+      }
+
+      &__head {
+        position: relative;
+        padding: 3rem 5rem 2rem 5rem;
+        font-weight: 700;
+        cursor: pointer;
+
+        @include mobile {
+          padding: 2rem 2rem 1rem 2rem;
+        }
+
+        &::before, &::after {
+          display: block;
+          content: '';
+          position: absolute;
+          right: 5rem;
+          top: calc(50% + 0.3rem);
+          width: 2rem;
+          height: 0.4rem;
+          background: $bg-gray;
+          transition: all 0.25s;
+
+          @include mobile {
+            right: 2rem;
+          }
+        }
+        &::after {
+          transform: rotate(90deg);
+        }
+      }
+
+      &__content {
+        padding: 0rem 5rem;
+        @include mobile {
+          padding: 0rem 2rem;
+        }
+
+        &__inner {
+          margin: 0 0 2rem;
+        }
+      }
+
+      &--active, &:hover, &:focus-visible {
+        border-color: $bg-primary;
+
+        .accordion__item__head {
+          &::before, &::after {
+            background: $bg-primary;
+          }
+        }
+      }
+
+      &--active {
+        .accordion__item__head::after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+.tooltip-wrap--custom {
+  .tooltip {
+
+    &:has(.tooltip__popup--active) .tooltip__btn-open {
+      border-color: $bg-primary;
+      color: $fc-white;
+      background: $bg-primary;
+    }
+    &__popup {
+      width: 28rem;
+      background: $bg-white;
+      border: 2px solid $bg-primary;
+      border-radius: 1rem;
+
+      &__inner {
+        padding: 2rem;
+      }
+
+      &__head {
+        &__tit {
+          color: $fc-primary;
+          font-weight: 600;
+        }
+        &__close {
+          position: relative;
+          width: 2rem;
+          height: 2rem;
+          span {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+          }
+          &::before, &::after {
+            display: block;
+            content: '';
+            position: absolute;
+            right: 0rem;
+            top: 1rem;
+            width: 2rem;
+            height: 0.4rem;
+            background: $bg-primary;
+            transition: all 0.25s;
+          }
+          &::before {
+            transform: rotate(45deg);
+          }
+          &::after {
+            transform: rotate(-45deg);
+          }
+        }
+      } 
+
+      &__content {
+        display: flex;
+        gap: 1rem;
+        img {
+          width: auto;
+          height: 10rem;
+        }
+      }
+    }
+  }
+}

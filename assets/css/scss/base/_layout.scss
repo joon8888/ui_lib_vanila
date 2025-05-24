@@ -189,11 +189,13 @@ body {
     }
   }
 
-  section + section {
-    margin-top: 6rem;
+  &__section {
+    + .container__section {
+      margin-top: 6rem;
 
-    @include mobile {
-      margin-top: 4rem;
+      @include mobile {
+        margin-top: 4rem;
+      }
     }
   }
 
@@ -206,7 +208,7 @@ body {
     align-items: center;
     gap: 1rem;
     padding:3rem 0;
-    @include fontStyle ($size: 3rem, $fw: 900, $color: #222) {
+    @include fontStyle ($size: 3rem, $fw: 900, $color: $fc-black-real) {
       @include mobile {
         font-size: 2.4rem
       }
@@ -217,7 +219,17 @@ body {
     }
 
     &--sub {
-      @include fontStyle ($size: 2.4rem, $fw: 700, $color: #222);
+      @include fontStyle ($size: 2.4rem, $fw: 700, $color: $fc-black) {
+        @include mobile {
+          font-size: 2rem;
+        }
+      };
+
+      &-small {
+        @include fontStyle ($size: 2rem, $fw: 700, $color: $fc-gray) {
+          font-size: 1.6rem;
+        };
+      }
     }
 
     &::before {

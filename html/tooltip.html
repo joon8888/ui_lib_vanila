@@ -11,18 +11,55 @@
   <div class="container">
     <div class="container__inner">
       <h2 class="container__title">Tooltip 팝업</h2>
-      <section class="container__Section">
+      <section class="container__section">
         <h3 class="container__title--sub">Info</h3>
-        <div class="container__content--box">
+        <div class="container__content--box mg-t-10">
           <ul class="container__content--list">
             <li>버튼 클릭 시 팝업 생성</li>
-            <li>디폴트 팝업 위치 : 버튼 기준 상단의 중앙으로 오픈</li>
-            <li>특징 : viewport 상하좌우로부터의 버튼 거리를 getBoundingClientRect로 측정하여, 자동으로 위치 열림</li>
+            <li>디폴트 팝업 오픈 위치 : 버튼 기준 상단의 중앙으로 오픈</li>
+            <li><b class="fc-primary">버튼 기준 viewport 상하좌우 잔여 거리를 getBoundingClientRect로 측정하여, 자동으로 위치 열림 가능</b></li>
           </ul>
         </div>
       </section>
-      <div class="tooltip-wrap" style="display: flex; justify-content: space-between;">
-        <div class="tooltip" data-tooltip-options='{"direction": {"x":"auto", "y":"auto"}, "a11y": true}'>
+      <section class="container__section">
+        <h3 class="container__title--sub">data-tooltip-options</h3>
+        <div class="container__content--box mg-t-10">
+          <ul class="container__content--list">
+            <li>디폴트옵션 : {"direction" : {"x":"auto", "y":"auto"}, "a11y": false}</li>
+            <li>
+              direction : 버튼 기준 툴팁팝업의 열리는 방향 수동 지정 (x: left / right / bottom, y: top / bottom)<br>
+              <b class="fc-primary">auto 지정 시 viewport 기준 자동 열림</b>
+            </li>
+            <li>a11y : aria-hidden 속성 활성화 (스크린리더 초점 접근 불가 강화)</li>
+            <li><span class="text-underline">본 옵션 전체 또는 일부를 누락하여도 상기 디폴트 옵션과 유저 옵션(우선 적용)이 병합되어 오류를 방어합니다.</span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="container__section tooltip-wrap--custom">
+        <h3 class="container__title--sub">Demo</h3>
+        <h4 class="container__title--sub-small">direction x left y bottom 지정 </h4>
+        <p class="mg-t-10">완성도는 디테일에서 나오는 것이다. 고객은 디테일에 감동하고 생각지 못한 부분에서 감동한다. 비슷한 예로 내로라하는 영화감독 거장들 역시 디테일에 집착한다. 그리고 결과물로 찬사를 받는다. 작은 차이가 큰 차이를 만든다는 믿음이 있어야 한다. 믿음은 실제로 이루어진다. 배신하는 법이 없다. 메시지의 완성도 역시 그렇다. 실체가 있는 좋은 믿음, 즉 디테일에 끊임없이 집착하고 매달리는 이유가 있어야 한다.</p>
+        <div class="tooltip" data-tooltip-options='{"direction": {"x":"left", "y":"bottom"}, "a11y": false}'>
+          <button type="button" class="tooltip__btn-open container__btn container__btn--link">글귀 출처 보기</button>
+          <div class="tooltip__popup">
+            <div class="tooltip__popup__inner">
+              <div class="tooltip__popup__head">
+                <div class="tooltip__popup__head__tit">출처 도서명</div>
+                <button type="button" class="tooltip__popup__head__close"><span>닫기</span></button>
+              </div>
+              <div class="tooltip__popup__content">
+                <p>UX 라이팅 시작하기 (고객 경험 관리를 위한 메시지 가이드)</p>
+                <img src="./../assets/image/tooltip_img.jpg" alt="UX 라이팅 시작하기 (고객 경험 관리를 위한 메시지 가이드) 도서 커버 이미지">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container__section">
+        <h3 class="container__title--sub">Code</h3>
+      </section>
+      <div class="tooltip-wrap  tooltip-wrap--custom" style="display: flex; justify-content: space-between;">
+        <div class="tooltip" data-tooltip-options='{"direction": {"x":"auto", "y":"auto"}, "a11y": false}'>
           <button type="button" class="tooltip__btn-open">툴팁팝업열기</button>
           <div class="tooltip__popup">
             <div class="tooltip__popup__inner">
@@ -40,7 +77,7 @@
             <div class="tooltip__popup__inner">
               <div class="tooltip__popup__head">
                 <div class="tooltip__popup__head__tit">툴팁팝업 타이틀</div>
-                <button type="button" class="tooltip__popup__head__close">닫기</button>
+                <button type="button" class="tooltip__popup__head__close"><span>닫기</span></button>
               </div>
               <div class="tooltip__popup__content">툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용 툴팁 내용</div>
             </div>
