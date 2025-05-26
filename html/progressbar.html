@@ -6,16 +6,43 @@
   <title>Scroll Progressbar | Script Module Libs</title>
   <link rel="stylesheet" href="./../assets/css/style.css" />
   <script type="module" src="./../assets/js/main.js"></script>
-  <style>
-    body {
-      height: 300vh;
-    }
-  </style>
 </head>
 <body>
-  <h2>Scroll Progress Bar</h2>
-  <pre><code>&lt;div class="scroll-progress" data-progressbar-options ='{"type": "bar","isLabel": false}'&gt;</code></pre>
-  <pre><code>&lt;div class="scroll-progress" data-progressbar-options ='{"type": "round","isLabel": true}'&gt;</code></pre>
+  <div class="container">
+    <div class="container__inner">
+      <h2 class="container__title">Scroll Progressbar</h2>
+      <section class="container__section">
+        <h3 class="container__title--sub">Info</h3>
+        <div class="container__content--box mg-t-10">
+          <ul class="container__content--list">
+            <li>페이지 스크롤 시 scrollHeight 값 백분율 환산</li>
+            <li><b class="fc-primary">백그라운드 꾸밈 요소로 인하여 웹접근성(A11Y) 속성 불필요</b></li>
+            <li>상단 고정(bar) 및 좌측 하단 원형 고정(round) 2가지 타입 설계 (고정 위치의 경우 추후 CSS 커스텀 가능)</li>
+          </ul>
+        </div>
+      </section>
+      <section class="container__section">
+        <h3 class="container__title--sub">data-progressbar-options</h3>
+        <div class="container__content--box mg-t-10">
+          <ul class="container__content--list">
+            <li>디폴트옵션 : {"type": "bar","isLabel": false}</li>
+            <li>
+              type : bar / round 택 가능<br>
+              <b class="fc-primary">선택 타입에 따라 구조 상단 .scroll-progress 마크업에 클래스 동적 추가 (.scroll-progress--type-bar /  .scroll-progress--type-round)</b>
+            </li>
+            <li>isLabel : 진행율(%) 노출</li>
+            <li><span class="text-underline">본 옵션 전체 또는 일부를 누락하여도 상기 디폴트 옵션과 유저 옵션(우선 적용)이 병합되어 오류를 방어합니다.</span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="container__section">
+        <h3 class="container__title--sub">Demo</h3>
+        <p>스크롤 테스트용 영역입니다.</p> 
+        <div class="container__content--box mg-t-10" style="height: 100vh;">
+        </div>
+      </section>
+    </div>
+  </div>
   <div class="scroll-progress"></div>
   <div class="scroll-progress" data-progressbar-options = '{"type": "round", "isLabel": true}'></div>
 </body>

@@ -11,10 +11,21 @@
   <div class="container">
     <div class="container__inner">
       <h2 class="container__title">Accordion</h2>
+      <section class="container__section">
+        <h3 class="container__title--sub">data-accordion-options</h3>
+        <div class="container__content--box mg-t-10">
+          <ul class="container__content--list">
+            <li>디폴트옵션 : {"a11y" : false, "multiOpen": false}</li>
+            <li>multiOpen : 다중열림 여부 체크 (.accordion 단위 그룹화 적용)</li>
+            <li>a11y : role, tabindex, title, aria-hidden, aria-expanded 속성 활성화 및 키보드제어 가능 (엔터, 스페이스바)</li>
+            <li><span class="text-underline">본 옵션 전체 또는 일부를 누락하여도 상기 디폴트 옵션과 유저 옵션(우선 적용)이 병합되어 오류를 방어합니다.</span></li>
+          </ul>
+        </div>
+      </section>
       <section class="container__section accordion-wrap accordion-wrap--custom">
         <h3 class="container__title--sub">Demo</h3>
-        <h4 class="container__title--sub-small">Default Type</h4>
-        <div class="accordion">
+        <h4 class="container__title--sub-small mg-t-20">Default Type</h4>
+        <div class="accordion mg-t-10">
           <dl class="accordion__item">
             <dt class="accordion__item__head">What is Lorem Ipsum?</dt>
             <dd class="accordion__item__content">
@@ -30,8 +41,8 @@
             </dd>
           </dl>
         </div>
-        <h4 class="container__title--sub-small">A11Y 적용 / 다중 열림 허용 Type</h4>
-        <div class="accordion" data-accordion-options = '{"a11y": true, "multiOpen" : true}'>
+        <h4 class="container__title--sub-small mg-t-20">A11Y 적용 / 다중 열림 허용 Type</h4>
+        <div class="accordion mg-t-10" data-accordion-options = '{"a11y": true, "multiOpen" : true}'>
           <dl class="accordion__item">
             <dt class="accordion__item__head">What is Lorem Ipsum?</dt>
             <dd class="accordion__item__content">
