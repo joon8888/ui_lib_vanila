@@ -5,7 +5,7 @@
 .tab {
   &__nav {
     width: 100%;
-    height: 100px;
+    height: 40px;
     &--fixed {
       position: fixed;
       top: 0;
@@ -17,23 +17,21 @@
       height: 100%;
     }
     &__btn {
-      all: unset;
       display: block;
       width: 100%;
       height: 100%;
-      background: #efefef;
+      // background: #efefef;
 
-      &--active {
-        background: royalblue;
-      } 
+      // &--active {
+      //   background: royalblue;
+      // } 
     }
   }
   &__content__panel {
-    height: 100vh;
 
-    &--active {
-      background: royalblue;
-    }
+    // &--active {
+    //   background: royalblue;
+    // }
   }
 
   // type : basic

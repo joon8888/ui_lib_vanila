@@ -214,6 +214,10 @@ body {
       }
     };
 
+    &--no-sticky {
+      position: static;
+    }
+
     @include mobile {
       padding: 1.5rem 0;
     }
