@@ -738,11 +738,19 @@ body {
 .accordion-wrap--custom .accordion__item__content__inner {
   margin: 0 0 2rem;
 }
-.accordion-wrap--custom .accordion__item--active, .accordion-wrap--custom .accordion__item:hover, .accordion-wrap--custom .accordion__item:focus-visible {
+.accordion-wrap--custom .accordion__item--active, .accordion-wrap--custom .accordion__item:focus-visible {
   border-color: #1428a0;
 }
-.accordion-wrap--custom .accordion__item--active .accordion__item__head::before, .accordion-wrap--custom .accordion__item--active .accordion__item__head::after, .accordion-wrap--custom .accordion__item:hover .accordion__item__head::before, .accordion-wrap--custom .accordion__item:hover .accordion__item__head::after, .accordion-wrap--custom .accordion__item:focus-visible .accordion__item__head::before, .accordion-wrap--custom .accordion__item:focus-visible .accordion__item__head::after {
+.accordion-wrap--custom .accordion__item--active .accordion__item__head::before, .accordion-wrap--custom .accordion__item--active .accordion__item__head::after, .accordion-wrap--custom .accordion__item:focus-visible .accordion__item__head::before, .accordion-wrap--custom .accordion__item:focus-visible .accordion__item__head::after {
   background: #1428a0;
+}
+@media screen and (min-width: 767px) {
+  .accordion-wrap--custom .accordion__item:hover {
+    border-color: #1428a0;
+  }
+  .accordion-wrap--custom .accordion__item:hover .accordion__item__head::before, .accordion-wrap--custom .accordion__item:hover .accordion__item__head::after {
+    background: #1428a0;
+  }
 }
 .accordion-wrap--custom .accordion__item--active .accordion__item__head::after {
   transform: rotate(180deg);

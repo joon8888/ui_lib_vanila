@@ -55,12 +55,24 @@
         }
       }
 
-      &--active, &:hover, &:focus-visible {
+      &--active, &:focus-visible {
         border-color: $bg-primary;
 
         .accordion__item__head {
           &::before, &::after {
             background: $bg-primary;
+          }
+        }
+      }
+
+      &:hover {
+        @media screen and (min-width: $breakpoint-mobile) {
+          border-color: $bg-primary;
+
+          .accordion__item__head {
+            &::before, &::after {
+              background: $bg-primary;
+            }
           }
         }
       }
